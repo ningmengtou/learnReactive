@@ -43,11 +43,15 @@ export default class Watcher {
   }
 
   getAndInvoke(cb) {
+    // 获取最新值
     const value = this.get()
 
+    // 如果更新的新值和旧值不等
     if (value !== this.value || typeof value == 'object') {
+      // this.value 为旧值 value 为新值
       const oldValue = this.value;
       this.value = value
+      // 调用回调函数 把最新值传递出去
       cb.call(this.target, value, oldValue)
     }
 

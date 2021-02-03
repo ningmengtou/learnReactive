@@ -17,7 +17,7 @@ observe(obj)
 obj.g.push(1000)
 
 // Watcher 就是监听数据的更改
-new Watcher(obj, 'a.m.n', (val) => {
+new Watcher(obj, 'a.m.n', (val,a,b) => {
   console.log(55555, val);
 })
 
